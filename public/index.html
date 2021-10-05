@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Webpack/Babel-demo</title>
+   </head>
+   <body>
+      <div id="all-content" style="display: none;">
+      <h1>Person Hobby API</h1>
+      <div class="page">
+         <ul id="menu" class="header">
+            <li class="selected"><a href="" class="active" id="search">Search</a></li>
+            <li><a href="" id="api">API</a></li>
+            <li><a href="" id="persons">Persons</a></li>
+            <li><a href="" id="hobbies">Hobbies</a></li>
+            <li><a href="https://github.com/Capa2/CA1A2/" target="new" id="github">github</a></li>
+         </ul>
+         <div class="content">
+            <div class="innerContent">
+               <div id="search_html" style="display:none;">
+                  <h2>Search</h2>
+                  <form>
+                     <div class="form-group">
+                        <label for="queryTarget">Search for:</label>
+                        <select class="custom-select" name="queryTarget" id="queryTarget">
+                           <option value="person">Person</option>
+                           <option value="hobby">Hobby</option>
+                           <option value="number">Phone number</option>
+                           <option value="address">Address</option>
+                           <option value="zip">Zip</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="queryFilter">Filter by:</label>
+                        <select class="custom-select" name="queryFilter" id="queryFilter">
+                           <option value="phone">phone number</option>
+                           <option value="personid">Person (id)</option>
+                           <option value="hobbyid">Hobby (id)</option>
+                           <option value="zip">Zip code</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <input class="form-control" type="text" id="queryInput" id="queryInput" placeholder="Search..."/>
+                     </div>
+                     <div class="form-group">
+                        <input type="button" class="btn btn-large btn-primary" value="Submit">
+                     </div>
+                  </form>
+               </div>
+               <div id="api_html" style="display:none;">
+                  <h2>API Documentation</h2>
+                  <p>Add your basic HTML for Exercise 2 here</p>
+               </div>
+               <div id="persons_html" style="display:none; ">
+                  <h2>Person List</h2>
+                  <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+               </div>
+               <div id="hobbies_html" style="display:none; ">
+                  <h2>Hobby List</h2>
+                  <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

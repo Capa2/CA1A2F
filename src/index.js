@@ -1,6 +1,7 @@
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import facade from "./script/facade.js";
+import Person from "./script/person.js";
 
 document.getElementById("all-content").style.display = "block";
 
@@ -47,30 +48,24 @@ var resultView = document.querySelector(".resultView");
 document.querySelector("form .btn").onclick = getResult;
 getResult();
 
-function extract(input) {
-	const result = [];
-	for (const key in input) {
-		const value = input[key];
-		if (typeof value == "object") {
-			result.push(extract(value));
-		} else {
-			result.push(" " + key + ": " + value);
-		}
-	}
-	return result;
+function pTag(content) {
+	let p = document.createElement("p");
+	let text = document.createTextNode(content);
+	p.appendChild(text);
+	return p;
 }
 
 function getResult() {
 	resultView.innerHTML = "";
 	facade.getPersons().then((persons) => {
 		persons.map((person) => {
+			console.log(person);
+			let personObj = new Person(person);
 			let div = document.createElement("div");
-			const attr = extract(person);
-			for (const val in attr) {
-				let p = document.createElement("p");
-				p.appendChild(document.createTextNode(attr[val]));
-				div.appendChild(p);
-			}
+			div.appendChild(pTag(personObj.getName()));
+			div.appendChild(pTag(personObj.getPhones()));
+			div.appendChild(pTag(personObj.getAddress()));
+			div.appendChild(pTag(personObj.getId()));
 			resultView.insertAdjacentElement("beforeend", div);
 		});
 	});

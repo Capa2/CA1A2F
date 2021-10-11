@@ -6,13 +6,13 @@ function getPersons() {
         .then(res => httpUtil.handleHttpErrors(res))
         .catch(httpUtil.errCatch);
 }
-/*
-function getUser(id) {
-    return fetch(url + "/" + id)
+
+function getPerson(phone) {
+    return fetch(getUrl("person", "phone", phone))
         .then(res => httpUtil.handleHttpErrors(res))
         .catch(httpUtil.errCatch);
 }
-
+/*
 function addUser(user) {
     return fetch(url, httpUtil.makeOptions("POST", user))
         .then(res => httpUtil.handleHttpErrors(res))
@@ -33,8 +33,8 @@ function deleteUser(id) {
 */
 const facade = {
     getPersons,
-    /*getUsers,
-    addUser,
+    getPerson,
+    /*addUser,
     editUser,
     deleteUser,*/
 }

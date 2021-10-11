@@ -1,4 +1,4 @@
-function getUrl(type, filter) {
+function getUrl(type, filter, target) {
     const local = false;
     let url = "https://karpantschof.com/CA1A2/api/";
     if (local) url = "http://localhost:8080/CA1A2_war_exploded/api/"
@@ -32,7 +32,7 @@ function getUrl(type, filter) {
     };
 
     if (filter != "all" && target != null) url += target;
-    console.log("GET: " + url);
+    console.log(url);
     return url;
 }
 
